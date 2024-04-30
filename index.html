@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Accepter_Automata Task</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Set minimum viewport height */
+
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem; /* Slightly smaller size */
+            margin-bottom: 10px;
+        }
+
+        .subtext {
+            font-size: 1 rem; /* Even smaller size for subtext */
+            color: #f7f1f1; /* White text color for better visibility on sea background */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Optional text shadow for readability */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: rgb(2, 2, 2);
+            border: none;
+            border-radius: 5px;
+        }
+
+        #message {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p class="subtext">Scientific Number Accepter</p> 
+    <p class="subtext">Automata Theory</p>
+    <p class="subtext">Information System, BY 221011060115_Indy Z.P.Moki</p>
+    
+
+    <form id="numberForm">
+        <label for="numberInput">Enter Scientific Number:</label>
+        <input type="text" id="numberInput" name="number">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const numberForm = document.getElementById('numberForm');
+        const message = document.getElementById('message');
+
+        numberForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const number = document.getElementById('numberInput').value;
+
+            // Basic validation (can be improved)
+            if (!/^-?\d+\.?\d*(?:[eE][+-]?\d+)?$/.test(number)) {
+                message.textContent = "No, It is not a number";
+                message.style.color = "red";
+                return;
+            }
+
+            message.textContent = "Yes, It is a number";
+            message.style.color = "green";
+        });
+    </script>
+    <style>
+    body {
+        background-image: url("https://i.pinimg.com/736x/1a/56/31/1a5631f85d8745d465e0a5a74a3f2315.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+</body>
+</html>
